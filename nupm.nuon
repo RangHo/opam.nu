@@ -1,0 +1,10 @@
+{
+  name: opam
+  type: module
+  version: "0.1.0"
+  description: "Nushell Integration for OCaml Package Manager."
+  maintainers: [
+    "@RangHo"
+  ]
+  license: "LICENSE"
+}
