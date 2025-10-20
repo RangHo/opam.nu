@@ -9,7 +9,7 @@ export-env {
 
 def --env add-hook [field: cell-path new_hook: any] {
   let old_config = $env.config? | default {}
-  let old_hooks = $old_config | get $field --ignore-errors | default []
+  let old_hooks = $old_config | get --optional $field | default []
   let new_hooks = $old_hooks ++ [$new_hook]
   $env.config = $old_config | upsert $field $new_hooks
 }
