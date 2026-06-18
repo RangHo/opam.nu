@@ -26,6 +26,7 @@ def --env update-env [] {
 
 def --env update-opam-env [] {
   ^opam env --shell=sh
-    | parse "{var}='{val}'; export {var2};"
+    | lines
+    | parse "{var}='{val}'; export {_};"
     | update-env
 }
